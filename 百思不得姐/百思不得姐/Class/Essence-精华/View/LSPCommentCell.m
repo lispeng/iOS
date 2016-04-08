@@ -50,7 +50,7 @@
     
     if (comment.voiceuri.length) {
         self.voiceButton.hidden = NO;
-        [self.voiceButton setTitle:[NSString stringWithFormat:@"%zd",comment.voicetime] forState:UIControlStateNormal];
+        [self.voiceButton setTitle:[NSString stringWithFormat:@"%zd\"",comment.voicetime] forState:UIControlStateNormal];
     }else{
         self.voiceButton.hidden = YES;
     }
