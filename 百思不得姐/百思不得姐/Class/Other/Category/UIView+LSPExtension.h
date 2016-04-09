@@ -37,4 +37,9 @@
  *  设置UIView的centerY
  */
 @property (assign,nonatomic) CGFloat centerY;
+/**
+ *  判断一个控件是否真正显示在主窗口上
+ *
+ */
+- (BOOL)isShowingOnKeyWindow;
 @end

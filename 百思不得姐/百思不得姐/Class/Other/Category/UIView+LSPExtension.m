@@ -84,6 +84,23 @@
 {
     return self.center.y;
 }
-
+/**
+ *  判断一个控件是否真正显示在主窗口上
+ *
+ */
+- (BOOL)isShowingOnKeyWindow
+{
+    //获取主窗口
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    //以主窗口左上角为坐标原点计算self的坐标矩形框
+    CGRect newFrame = [keyWindow convertRect:self.frame fromView:self.superview];
+    CGRect winFrame = keyWindow.frame;
+    //self的frame矩形框是否与主窗口有交叉
+    BOOL intersect = CGRectIntersectsRect(newFrame, winFrame);
+    //判断一个控件是否真正显示在主窗口上面
+    BOOL isShowing = (self.window == keyWindow) && !self.isHidden && self.alpha > 0.01 && intersect;
+    
+    return isShowing;
+}
 
 @end

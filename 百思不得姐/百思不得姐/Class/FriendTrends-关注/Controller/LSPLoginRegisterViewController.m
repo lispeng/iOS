@@ -19,8 +19,19 @@
 
 @implementation LSPLoginRegisterViewController
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    /*
+     改变statusBar的颜色:在plist文件中的“Application requires iPhone environment”添加“View controller-based status bar appearance”为“NO”,让状态来显示不要基于控制器
+     设置状态栏的显示状态
+     */
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;;
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     [self.view insertSubview:self.registerView atIndex:0];
     // Do any additional setup after loading the view from its nib.
@@ -37,10 +48,12 @@
 /**
  * 设置状态栏的颜色
  */
+/*
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }
+ */
 /**
  *  显示登陆或注册界面的方法
  *
@@ -68,6 +81,8 @@
  */
 - (IBAction)backLastVisual {
     
+    //恢复状态栏的显示方式
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

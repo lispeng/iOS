@@ -34,12 +34,15 @@ static UIWindow *window_;
 + (void)searchScrollViewInView:(UIView *)listView
 {
     for (UIView *childView in listView.subviews) {
-        //坐标系转换
+        /*
+        //坐标系转换(获得在主窗口的左边newFrame)
         CGRect newFrame = [childView.superview convertRect:childView.frame toView:[UIApplication sharedApplication].keyWindow];
-        BOOL isShow = CGRectIntersectsRect([UIApplication sharedApplication].keyWindow.frame, newFrame);
-        
+        CGRect windowBounds = [UIApplication sharedApplication].keyWindow.bounds;
+        //判断一个控件是否真正显示在窗口内
+        BOOL isShowing = childView.window == [UIApplication sharedApplication].keyWindow && !childView.isHidden && childView.alpha > 0.01 && CGRectIntersectsRect(newFrame, windowBounds);
+         */
         //如果子控件是UIScrollView对象
-        if ([childView isKindOfClass:[UIScrollView class]] && isShow == YES) {
+        if ([childView isKindOfClass:[UIScrollView class]] && childView.isShowingOnKeyWindow) {
             UIScrollView *scrollView = (UIScrollView *)childView;
             //若果是UISCrollView对象就让其滚动到顶部
             CGPoint offset = scrollView.contentOffset;
