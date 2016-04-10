@@ -244,6 +244,9 @@ static NSString *const LSPCommentID = @"comment";
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
     [self.view endEditing:YES];
+    
+    //退出UIMenuController菜单
+    [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
 }
 
 #pragma mark--UITableViewDataSource
@@ -361,6 +364,46 @@ static NSString *const LSPCommentID = @"comment";
    
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //创建UIMenuController
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    if (menu.isMenuVisible) {//避免重复点击
+        [menu setMenuVisible:NO animated:YES];
+       
+    }else{
+     //获取被点击的cell对象
+    LSPCommentCell *cell = (LSPCommentCell *)[tableView cellForRowAtIndexPath:indexPath];
+    //让cell成为第一响应者
+    [cell becomeFirstResponder];
+    
+    
+    UIMenuItem *dingItem = [[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
+    UIMenuItem *replayItem = [[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(replay:)];
+    UIMenuItem *reportItem = [[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(report:)];
+    
+    menu.menuItems = @[dingItem,replayItem,reportItem];
+
+    //设置显示区域
+    CGRect rect = CGRectMake(0, cell.height * 0.5, cell.width, cell.height * 0.5);
+    [menu setTargetRect:rect inView:cell];
+    [menu setMenuVisible:YES animated:YES];
+    }
+}
+- (void)ding:(UIMenuController *)menu
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSLog(@"顶-->%zd",indexPath.row);
+}
+- (void)replay:(UIMenuController *)menu
+{
+    NSLog(@"回复");
+}
+- (void)report:(UIMenuController *)menu
+{
+    NSLog(@"举报");
+}
+
 /**
  *  返回第section组的数组
  *

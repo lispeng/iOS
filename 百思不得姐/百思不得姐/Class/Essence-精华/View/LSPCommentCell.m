@@ -24,6 +24,14 @@
 
 @implementation LSPCommentCell
 
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    return NO;
+}
 - (void)awakeFromNib
 {
     UIImageView *imageView = [[UIImageView alloc] init];

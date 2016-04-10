@@ -26,7 +26,7 @@
      改变statusBar的颜色:在plist文件中的“Application requires iPhone environment”添加“View controller-based status bar appearance”为“NO”,让状态来显示不要基于控制器
      设置状态栏的显示状态
      */
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 
 }
 - (void)viewDidLoad {
