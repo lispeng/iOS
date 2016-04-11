@@ -136,7 +136,7 @@
     //测试加V认证
     //topic.sina_v = arc4random_uniform(100) % 2;
     //头像
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.profileImageView setCircleHeader:topic.profile_image];
     //新浪加V认证处理
     self.sina_VView.hidden = !topic.sina_v;
     //昵称

@@ -34,7 +34,8 @@
 - (void)setUser:(LSPRecommendUser *)user
 {
     _user = user;
-    [self.iconHeader sd_setImageWithURL:[NSURL URLWithString:user.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.iconHeader setCircleHeader:user.header];
+
     self.userName.text = user.screen_name;
     NSString *fansCount = nil;
     if(user.fans_count < 10000)

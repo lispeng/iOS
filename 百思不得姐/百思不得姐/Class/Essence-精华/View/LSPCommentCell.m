@@ -46,7 +46,7 @@
 {
     _comment = comment;
     //用户头像
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:comment.user.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.profileImageView setCircleHeader:comment.user.profile_image];
     //性别显示
     self.sexView.image = [comment.user.sex isEqualToString:LSPUserSexMale] ? [UIImage imageNamed:@"Profile_manIcon"] : [UIImage imageNamed:@"Profile_womanIcon"];
     //评论内容

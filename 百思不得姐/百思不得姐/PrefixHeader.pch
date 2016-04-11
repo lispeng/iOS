@@ -15,6 +15,9 @@
 #import "UIBarButtonItem+LSPExtension.h"
 #import "LSPConst.h"
 #import "NSDate+LSPExtension.h"
+#import "UIImage+LSPExtension.h"
+#import "UIImageView+LSPExtension.h"
+#define LSPNotiCenter [NSNotificationCenter defaultCenter]
 #ifdef DEBUG
 
 #define LSPLog(...) NSLog(__VA_ARGS__)

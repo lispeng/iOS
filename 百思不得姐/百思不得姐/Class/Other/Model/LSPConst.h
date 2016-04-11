@@ -53,3 +53,17 @@ UIKIT_EXTERN CGFloat const LSPTopicCellCmtTitleH;
  */
 UIKIT_EXTERN NSString *const LSPUserSexMale;
 UIKIT_EXTERN NSString *const LSPUserSexFemale;
+
+/**
+ *  tabBar被选中的通知的名字
+ */
+UIKIT_EXTERN NSString *const LSPTabBarDidSelectNotification;
+/**
+ *  tabBar被选中的控制器的索引index--->key
+ */
+UIKIT_EXTERN NSString *const LSPSelectControllerIndexKey;
+/**
+ *  tabBar被选中的控制器的key
+ */
+UIKIT_EXTERN NSString *const LSPSelectControllerKey;
+

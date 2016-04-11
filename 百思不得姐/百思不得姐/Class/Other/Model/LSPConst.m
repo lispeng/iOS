@@ -45,3 +45,15 @@ NSString *const LSPUserSexFemale = @"f";
  */
 CGFloat const LSPTopicCellCmtTitleH = 20;
 
+/**
+ *  tabBar被选中的通知的名字
+ */
+NSString *const LSPTabBarDidSelectNotification = @"LSPTabBarDidSelectNotification";
+/**
+ *  tabBar被选中的控制器的索引index--->key
+ */
+NSString *const LSPSelectControllerIndexKey = @"LSPSelectControllerIndexKey";
+/**
+ *  tabBar被选中的控制器的key
+ */
+NSString *const LSPSelectControllerKey = @"LSPSelectControllerKey";

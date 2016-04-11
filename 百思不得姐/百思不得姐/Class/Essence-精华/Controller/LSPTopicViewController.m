@@ -14,6 +14,7 @@
 #import "MJRefresh.h"
 #import "LSPEpisodeCell.h"
 #import "LSPCommentViewController.h"
+#import "LSPNewViewController.h"
 @interface LSPTopicViewController ()
 /**
  *  帖子数据
@@ -31,6 +32,10 @@
  *  上一次的请求参数
  */
 @property (strong,nonatomic) NSDictionary *params;
+/**
+ *  上一次选中的索引
+ */
+@property (assign,nonatomic) NSInteger lastSelectedIndex;
 @end
 
 @implementation LSPTopicViewController
@@ -69,7 +74,25 @@ static NSString *const identifier = @"episodeCell";
     self.tableView.backgroundColor = [UIColor clearColor];
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LSPEpisodeCell class]) bundle:nil] forCellReuseIdentifier:identifier];
+    //监听通知
+    [LSPNotiCenter addObserver:self selector:@selector(tabBarDidSelect) name:LSPTabBarDidSelectNotification object:nil];
 }
+
+- (void)tabBarDidSelect
+{
+    //如果是连续点中两次，就直接刷新
+    if (self.lastSelectedIndex == self.tabBarController.selectedIndex && self.view.isShowingOnKeyWindow) {
+        
+        [self.tableView.mj_header beginRefreshing];
+    }
+    self.lastSelectedIndex = self.tabBarController.selectedIndex;
+    
+}
+- (NSString *)a
+{
+    return [self.presentedViewController isKindOfClass:[LSPNewViewController class]] ? @"newlist" : @"list";
+}
+
 /**
  *  先刷新表格数据
  */
@@ -96,7 +119,7 @@ static NSString *const identifier = @"episodeCell";
     //请求数据
     NSString *url = @"http://api.budejie.com/api/api_open.php";
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"a"] = @"list";
+    dict[@"a"] = self.a;
     dict[@"c"] = @"data";
     dict[@"type"] = @(self.type);
     self.params = dict;
@@ -133,7 +156,7 @@ static NSString *const identifier = @"episodeCell";
     //下拉加载数据请求
     NSString *url = @"http://api.budejie.com/api/api_open.php";
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"a"] = @"list";
+    dict[@"a"] = self.a;
     dict[@"c"] = @"data";
     dict[@"type"] = @(self.type);
     dict[@"maxtime"] = self.maxtime;

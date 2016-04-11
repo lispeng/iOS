@@ -97,6 +97,15 @@ static NSString *const LSPCommentID = @"comment";
     params[@"hot"] = @"1";
     //下拉加载时请求数据
     [self.mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        //如果没有评论数据
+        if (![responseObject isKindOfClass:[NSDictionary class]]){
+            
+            //结束刷新
+            [self.tableView.mj_header endRefreshing];
+            
+            return;
+        }
         //最热评论模型
         self.hotComments = [LSPComment objectArrayWithKeyValuesArray:responseObject[@"hot"]];
         //最新评论模型
@@ -138,6 +147,12 @@ static NSString *const LSPCommentID = @"comment";
     params[@"lastcid"] =cmt.ID;
     //下拉加载时请求数据
     [self.mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        //如果没有评论数据
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            self.tableView.mj_footer.hidden = YES;
+            return;
+        }
         //最热评论模型
         self.hotComments = [LSPComment objectArrayWithKeyValuesArray:responseObject[@"hot"]];
         //最新评论模型

@@ -10,7 +10,7 @@
 #import "LSPTabBarViewController.h"
 #import "LSPPushGuideView.h"
 #import "LSPTopWindow.h"
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -26,6 +26,7 @@
     LSPTabBarViewController *vc = [[LSPTabBarViewController
                                     alloc] init];
     self.window.rootViewController = vc;
+    vc.delegate = self;
     //设置控制器可见属性
     [self.window makeKeyAndVisible];
     
@@ -35,6 +36,12 @@
   
     
     return YES;
+}
+#pragma mark--UITabBarControllerDelegate
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    //发出通知
+    [LSPNotiCenter postNotificationName:LSPTabBarDidSelectNotification object:nil userInfo:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

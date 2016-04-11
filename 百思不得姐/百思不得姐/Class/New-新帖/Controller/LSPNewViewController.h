@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LSPNewViewController : UIViewController
+#import "LSPEssenceViewController.h"
+@interface LSPNewViewController : LSPEssenceViewController
 
 @end

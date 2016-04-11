@@ -73,6 +73,8 @@
 		0485F5271CA7058600228325 /* LSPConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 0485F5261CA7058600228325 /* LSPConst.m */; };
 		0485F52E1CA70B6200228325 /* LSPEpisodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0485F52C1CA70B6200228325 /* LSPEpisodeCell.m */; };
 		0485F52F1CA70B6200228325 /* LSPEpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0485F52D1CA70B6200228325 /* LSPEpisodeCell.xib */; };
+		04A960881CBB6BC900DBC811 /* UIImage+LSPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A960851CBB6BC900DBC811 /* UIImage+LSPExtension.m */; };
+		04A960891CBB6BC900DBC811 /* UIImageView+LSPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A960871CBB6BC900DBC811 /* UIImageView+LSPExtension.m */; };
 		04AAF8761CB6733D00408FB6 /* LSPCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAF8751CB6733D00408FB6 /* LSPCommentHeaderView.m */; };
 		04F163001C77AF3E002F72BC /* LSPLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F162FE1C77AF3E002F72BC /* LSPLoginRegisterViewController.m */; };
 		04F163011C77AF3E002F72BC /* LSPLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F162FF1C77AF3E002F72BC /* LSPLoginRegisterViewController.xib */; };
@@ -262,6 +264,10 @@
 		0485F52B1CA70B6200228325 /* LSPEpisodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPEpisodeCell.h; sourceTree = "<group>"; };
 		0485F52C1CA70B6200228325 /* LSPEpisodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPEpisodeCell.m; sourceTree = "<group>"; };
 		0485F52D1CA70B6200228325 /* LSPEpisodeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSPEpisodeCell.xib; sourceTree = "<group>"; };
+		04A960841CBB6BC900DBC811 /* UIImage+LSPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LSPExtension.h"; sourceTree = "<group>"; };
+		04A960851CBB6BC900DBC811 /* UIImage+LSPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LSPExtension.m"; sourceTree = "<group>"; };
+		04A960861CBB6BC900DBC811 /* UIImageView+LSPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LSPExtension.h"; sourceTree = "<group>"; };
+		04A960871CBB6BC900DBC811 /* UIImageView+LSPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LSPExtension.m"; sourceTree = "<group>"; };
 		04AAF8741CB6733D00408FB6 /* LSPCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPCommentHeaderView.h; sourceTree = "<group>"; };
 		04AAF8751CB6733D00408FB6 /* LSPCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPCommentHeaderView.m; sourceTree = "<group>"; };
 		04F162FD1C77AF3E002F72BC /* LSPLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPLoginRegisterViewController.h; sourceTree = "<group>"; };
@@ -667,6 +673,10 @@
 		0434CCC81C66F8500032D997 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				04A960841CBB6BC900DBC811 /* UIImage+LSPExtension.h */,
+				04A960851CBB6BC900DBC811 /* UIImage+LSPExtension.m */,
+				04A960861CBB6BC900DBC811 /* UIImageView+LSPExtension.h */,
+				04A960871CBB6BC900DBC811 /* UIImageView+LSPExtension.m */,
 				0434CCC91C66F8500032D997 /* UIBarButtonItem+LSPExtension.h */,
 				0434CCCA1C66F8500032D997 /* UIBarButtonItem+LSPExtension.m */,
 				0434CCCB1C66F8500032D997 /* UIView+LSPExtension.h */,
@@ -1217,6 +1227,7 @@
 				0416F8B01CA4AF8100168977 /* LSPTopicPictureView.m in Sources */,
 				04F1E5AB1C75047200992F1E /* UIView+WebCacheOperation.m in Sources */,
 				04F1E5F81C7552CD00992F1E /* MJDictionaryCache.m in Sources */,
+				04A960881CBB6BC900DBC811 /* UIImage+LSPExtension.m in Sources */,
 				045046841C7666D2008AA806 /* UIScrollView+MJRefresh.m in Sources */,
 				04F1E5AF1C7505AD00992F1E /* LSPRecommendViewController.m in Sources */,
 				0416F8BD1CA5122200168977 /* DALabeledCircularProgressView.m in Sources */,
@@ -1229,6 +1240,7 @@
 				04FC27D11C676C790065F6CC /* LSPNewViewController.m in Sources */,
 				045046821C7666D2008AA806 /* MJRefreshConst.m in Sources */,
 				0434CCD61C66F8500032D997 /* LSPTabBar.m in Sources */,
+				04A960891CBB6BC900DBC811 /* UIImageView+LSPExtension.m in Sources */,
 				0450467A1C7666D2008AA806 /* MJRefreshAutoStateFooter.m in Sources */,
 				04F1E5A11C75047200992F1E /* SDWebImageDownloader.m in Sources */,
 				04484FA61C757B3200310E65 /* LSPRecommendUserCell.m in Sources */,
