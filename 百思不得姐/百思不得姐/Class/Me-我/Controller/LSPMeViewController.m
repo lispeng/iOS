@@ -7,17 +7,21 @@
 //
 
 #import "LSPMeViewController.h"
-
+#import "LSPMeCell.h"
+#import "LSPMeFooterView.h"
+#import "AFNetworking.h"
 @interface LSPMeViewController ()
 
 @end
 
 @implementation LSPMeViewController
-
+static NSString *LSPMeId = @"me";
 - (void)viewDidLoad {
     [super viewDidLoad];
     //设置导航栏的内容
     [self setupMeTrendsNavigationBar];
+    //设置tableView
+    [self setupTableView];
     // Do any additional setup after loading the view.
 }
 /**
@@ -25,14 +29,30 @@
  */
 - (void)setupMeTrendsNavigationBar
 {
-    //设置背景色
-    self.view.backgroundColor = LSPBackgroundColor;
-    //设置导航栏标题
+        //设置导航栏标题
     self.navigationItem.title = @"我的";
     //设置导航栏左边的按钮    
     UIBarButtonItem *mineSettingItem = [UIBarButtonItem itemWithImage:@"mine-setting-icon" highlightImage:@"mine-setting-icon-click" target:self action:@selector(mineSettingButtonClick)];
     UIBarButtonItem *mineMoonItem = [UIBarButtonItem itemWithImage:@"mine-moon-icon" highlightImage:@"mine-moon-icon-click" target:self action:@selector(mineMoonButtonClick)];
     self.navigationItem.rightBarButtonItems = @[mineSettingItem,mineMoonItem];
+    
+    
+}
+
+- (void)setupTableView
+{
+    //设置背景色
+    self.tableView.backgroundColor = LSPBackgroundColor;
+    //tableViewCell处理
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    [self.tableView registerClass:[LSPMeCell class] forCellReuseIdentifier:LSPMeId];
+    //header和footer的高度设置
+    self.tableView.sectionHeaderHeight = 0;
+    self.tableView.sectionFooterHeight = LSPTopicCellMargin;
+    
+    //设置内边距
+    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+    self.tableView.tableFooterView = [[LSPMeFooterView alloc] init];
 }
 /**
  *  点击设置按钮所触发的方法
@@ -47,6 +67,30 @@
 - (void)mineMoonButtonClick
 {
     LSPLog(@"%s",__func__);
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LSPMeCell *cell = [tableView dequeueReusableCellWithIdentifier:LSPMeId];
+    
+    if (indexPath.section == 0) {
+        cell.textLabel.text = @"注册/登陆";
+        cell.imageView.image = [UIImage imageNamed:@"setup-head-default"];
+    }else if (indexPath.section == 1){
+        cell.textLabel.text = @"离线下载";
+    }
+    
+  
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

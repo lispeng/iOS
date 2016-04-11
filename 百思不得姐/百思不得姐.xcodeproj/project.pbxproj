@@ -75,6 +75,12 @@
 		0485F52F1CA70B6200228325 /* LSPEpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0485F52D1CA70B6200228325 /* LSPEpisodeCell.xib */; };
 		04A960881CBB6BC900DBC811 /* UIImage+LSPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A960851CBB6BC900DBC811 /* UIImage+LSPExtension.m */; };
 		04A960891CBB6BC900DBC811 /* UIImageView+LSPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A960871CBB6BC900DBC811 /* UIImageView+LSPExtension.m */; };
+		04A9608C1CBB7BF400DBC811 /* LSPMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9608B1CBB7BF400DBC811 /* LSPMeCell.m */; };
+		04A9608F1CBBAC8B00DBC811 /* LSPMeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9608E1CBBAC8B00DBC811 /* LSPMeFooterView.m */; };
+		04A960921CBBB27100DBC811 /* LSPSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A960911CBBB27100DBC811 /* LSPSquare.m */; };
+		04A960981CBBC2D700DBC811 /* LSPSquareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A960971CBBC2D700DBC811 /* LSPSquareButton.m */; };
+		04A9609C1CBBD5CA00DBC811 /* LSPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9609A1CBBD5CA00DBC811 /* LSPWebViewController.m */; };
+		04A9609D1CBBD5CA00DBC811 /* LSPWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A9609B1CBBD5CA00DBC811 /* LSPWebViewController.xib */; };
 		04AAF8761CB6733D00408FB6 /* LSPCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAF8751CB6733D00408FB6 /* LSPCommentHeaderView.m */; };
 		04F163001C77AF3E002F72BC /* LSPLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F162FE1C77AF3E002F72BC /* LSPLoginRegisterViewController.m */; };
 		04F163011C77AF3E002F72BC /* LSPLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F162FF1C77AF3E002F72BC /* LSPLoginRegisterViewController.xib */; };
@@ -268,6 +274,17 @@
 		04A960851CBB6BC900DBC811 /* UIImage+LSPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LSPExtension.m"; sourceTree = "<group>"; };
 		04A960861CBB6BC900DBC811 /* UIImageView+LSPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LSPExtension.h"; sourceTree = "<group>"; };
 		04A960871CBB6BC900DBC811 /* UIImageView+LSPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LSPExtension.m"; sourceTree = "<group>"; };
+		04A9608A1CBB7BF400DBC811 /* LSPMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPMeCell.h; sourceTree = "<group>"; };
+		04A9608B1CBB7BF400DBC811 /* LSPMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPMeCell.m; sourceTree = "<group>"; };
+		04A9608D1CBBAC8B00DBC811 /* LSPMeFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPMeFooterView.h; sourceTree = "<group>"; };
+		04A9608E1CBBAC8B00DBC811 /* LSPMeFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPMeFooterView.m; sourceTree = "<group>"; };
+		04A960901CBBB27100DBC811 /* LSPSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPSquare.h; sourceTree = "<group>"; };
+		04A960911CBBB27100DBC811 /* LSPSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPSquare.m; sourceTree = "<group>"; };
+		04A960961CBBC2D700DBC811 /* LSPSquareButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPSquareButton.h; sourceTree = "<group>"; };
+		04A960971CBBC2D700DBC811 /* LSPSquareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPSquareButton.m; sourceTree = "<group>"; };
+		04A960991CBBD5CA00DBC811 /* LSPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPWebViewController.h; sourceTree = "<group>"; };
+		04A9609A1CBBD5CA00DBC811 /* LSPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPWebViewController.m; sourceTree = "<group>"; };
+		04A9609B1CBBD5CA00DBC811 /* LSPWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSPWebViewController.xib; sourceTree = "<group>"; };
 		04AAF8741CB6733D00408FB6 /* LSPCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPCommentHeaderView.h; sourceTree = "<group>"; };
 		04AAF8751CB6733D00408FB6 /* LSPCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPCommentHeaderView.m; sourceTree = "<group>"; };
 		04F162FD1C77AF3E002F72BC /* LSPLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPLoginRegisterViewController.h; sourceTree = "<group>"; };
@@ -594,9 +611,9 @@
 		0434CCBB1C66F8500032D997 /* Me-我 */ = {
 			isa = PBXGroup;
 			children = (
-				0434CCBC1C66F8500032D997 /* Controller */,
 				0434CCC11C66F8500032D997 /* Model */,
 				0434CCC21C66F8500032D997 /* View */,
+				0434CCBC1C66F8500032D997 /* Controller */,
 			);
 			path = "Me-我";
 			sourceTree = "<group>";
@@ -606,6 +623,9 @@
 			children = (
 				0434CCBD1C66F8500032D997 /* LSPMeViewController.h */,
 				0434CCBE1C66F8500032D997 /* LSPMeViewController.m */,
+				04A960991CBBD5CA00DBC811 /* LSPWebViewController.h */,
+				04A9609A1CBBD5CA00DBC811 /* LSPWebViewController.m */,
+				04A9609B1CBBD5CA00DBC811 /* LSPWebViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -613,6 +633,8 @@
 		0434CCC11C66F8500032D997 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04A960901CBBB27100DBC811 /* LSPSquare.h */,
+				04A960911CBBB27100DBC811 /* LSPSquare.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -620,6 +642,12 @@
 		0434CCC21C66F8500032D997 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04A9608A1CBB7BF400DBC811 /* LSPMeCell.h */,
+				04A9608B1CBB7BF400DBC811 /* LSPMeCell.m */,
+				04A9608D1CBBAC8B00DBC811 /* LSPMeFooterView.h */,
+				04A9608E1CBBAC8B00DBC811 /* LSPMeFooterView.m */,
+				04A960961CBBC2D700DBC811 /* LSPSquareButton.h */,
+				04A960971CBBC2D700DBC811 /* LSPSquareButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1093,6 +1121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F1E6071C75534000992F1E /* LSPRecommendCategoryCell.xib in Resources */,
+				04A9609D1CBBD5CA00DBC811 /* LSPWebViewController.xib in Resources */,
 				04F1E5DA1C750E5300992F1E /* SVProgressHUD.bundle in Resources */,
 				04835B7E1CA5B208000D1CD1 /* LSPPushGuideView.xib in Resources */,
 				04F1E55B1C74FB0600992F1E /* LSPFriendTrendsViewController.xib in Resources */,
@@ -1226,6 +1255,7 @@
 				0450467F1C7666D2008AA806 /* MJRefreshNormalHeader.m in Sources */,
 				0416F8B01CA4AF8100168977 /* LSPTopicPictureView.m in Sources */,
 				04F1E5AB1C75047200992F1E /* UIView+WebCacheOperation.m in Sources */,
+				04A960921CBBB27100DBC811 /* LSPSquare.m in Sources */,
 				04F1E5F81C7552CD00992F1E /* MJDictionaryCache.m in Sources */,
 				04A960881CBB6BC900DBC811 /* UIImage+LSPExtension.m in Sources */,
 				045046841C7666D2008AA806 /* UIScrollView+MJRefresh.m in Sources */,
@@ -1233,6 +1263,7 @@
 				0416F8BD1CA5122200168977 /* DALabeledCircularProgressView.m in Sources */,
 				045046781C7666D2008AA806 /* MJRefreshAutoGifFooter.m in Sources */,
 				0485F5271CA7058600228325 /* LSPConst.m in Sources */,
+				04A9609C1CBBD5CA00DBC811 /* LSPWebViewController.m in Sources */,
 				045046741C7666D2008AA806 /* MJRefreshBackFooter.m in Sources */,
 				045046831C7666D2008AA806 /* UIScrollView+MJExtension.m in Sources */,
 				045046761C7666D2008AA806 /* MJRefreshFooter.m in Sources */,
@@ -1243,6 +1274,7 @@
 				04A960891CBB6BC900DBC811 /* UIImageView+LSPExtension.m in Sources */,
 				0450467A1C7666D2008AA806 /* MJRefreshAutoStateFooter.m in Sources */,
 				04F1E5A11C75047200992F1E /* SDWebImageDownloader.m in Sources */,
+				04A960981CBBC2D700DBC811 /* LSPSquareButton.m in Sources */,
 				04484FA61C757B3200310E65 /* LSPRecommendUserCell.m in Sources */,
 				04F1E6021C7552CD00992F1E /* NSString+MJExtension.m in Sources */,
 				04F1E5A61C75047200992F1E /* UIImage+GIF.m in Sources */,
@@ -1269,6 +1301,7 @@
 				04F1E6011C7552CD00992F1E /* NSObject+MJProperty.m in Sources */,
 				04F1E5C71C75072900992F1E /* AFHTTPSessionManager.m in Sources */,
 				04F1E5C81C75072900992F1E /* AFNetworkReachabilityManager.m in Sources */,
+				04A9608C1CBB7BF400DBC811 /* LSPMeCell.m in Sources */,
 				0450467B1C7666D2008AA806 /* MJRefreshBackGifFooter.m in Sources */,
 				04F1E59F1C75047200992F1E /* SDWebImageCompat.m in Sources */,
 				04F1E5C51C75072900992F1E /* AFHTTPRequestOperation.m in Sources */,
@@ -1278,6 +1311,7 @@
 				04F1E5DC1C750E5300992F1E /* SVRadialGradientLayer.m in Sources */,
 				04F163001C77AF3E002F72BC /* LSPLoginRegisterViewController.m in Sources */,
 				04F1E5561C74D41E00992F1E /* LSPNavigationController.m in Sources */,
+				04A9608F1CBBAC8B00DBC811 /* LSPMeFooterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -60,7 +60,7 @@
     [self setupChildViewController:[[LSPFriendTrendsViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selectImage:@"tabBar_friendTrends_click_icon"];
 
     //我---控制器
-    [self setupChildViewController:[[LSPMeViewController alloc] init] title:@"我" image:@"tabBar_me_icon" selectImage:@"tabBar_me_click_icon"];
+    [self setupChildViewController:[[LSPMeViewController alloc] initWithStyle:UITableViewStyleGrouped] title:@"我" image:@"tabBar_me_icon" selectImage:@"tabBar_me_click_icon"];
     
     //用自定义的LSPTabBar导航条对象替换掉UITabBarController底部的tabBar导航条
     [self setValue:[[LSPTabBar alloc] init] forKeyPath:@"tabBar"];
