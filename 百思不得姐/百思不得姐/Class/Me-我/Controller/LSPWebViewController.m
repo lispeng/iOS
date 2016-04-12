@@ -7,8 +7,13 @@
 //
 
 #import "LSPWebViewController.h"
-
+#import <NJKWebViewProgress.h>
 @interface LSPWebViewController ()<UIWebViewDelegate>
+/**
+ *  进度代理对象
+ */
+@property (strong,nonatomic) NJKWebViewProgress *progress;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *goBackItem;
@@ -29,7 +34,17 @@
  */
 - (void)loadWebView
 {
-    self.webView.delegate = self;
+    self.progress = [[NJKWebViewProgress alloc] init];
+    self.webView.delegate = self.progress;
+    __weak typeof(self) weakSelf = self;
+    self.progress.progressBlock = ^(float progress){
+        
+        weakSelf.progressView.progress = progress;
+        weakSelf.progressView.hidden = (progress == 1.0);
+    };
+    
+    self.progress.webViewProxyDelegate = self;
+    
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
 }
 /**

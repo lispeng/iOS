@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="goBackItem" destination="S5K-1t-ryT" id="8ej-fV-893"/>
                 <outlet property="goForwardItem" destination="ZF1-Ve-qsu" id="Xjc-IM-rAA"/>
+                <outlet property="progressView" destination="p9N-aE-9tw" id="3hr-gw-TxT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="Fg9-pg-sVl" id="Fhv-CD-Ief"/>
             </connections>
@@ -45,15 +46,24 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p9N-aE-9tw">
+                    <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="194-mV-qSy"/>
+                    </constraints>
+                </progressView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="eos-aV-IRB" firstAttribute="top" secondItem="Fg9-pg-sVl" secondAttribute="bottom" id="3E2-Ae-uxc"/>
+                <constraint firstAttribute="trailing" secondItem="p9N-aE-9tw" secondAttribute="trailing" id="5T9-kz-VzL"/>
+                <constraint firstItem="p9N-aE-9tw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8HA-wB-Yly"/>
                 <constraint firstAttribute="trailing" secondItem="eos-aV-IRB" secondAttribute="trailing" id="N0H-cf-HqR"/>
                 <constraint firstAttribute="bottom" secondItem="eos-aV-IRB" secondAttribute="bottom" id="QQw-gL-WUF"/>
                 <constraint firstAttribute="trailing" secondItem="Fg9-pg-sVl" secondAttribute="trailing" id="TL0-6i-EgK"/>
                 <constraint firstItem="Fg9-pg-sVl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tc1-tw-rHV"/>
                 <constraint firstItem="Fg9-pg-sVl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xzm-bz-tYy"/>
+                <constraint firstItem="p9N-aE-9tw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="hqg-6e-cvp"/>
                 <constraint firstItem="eos-aV-IRB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="voA-HZ-thx"/>
             </constraints>
         </view>
