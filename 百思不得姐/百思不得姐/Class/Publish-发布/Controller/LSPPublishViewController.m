@@ -9,6 +9,8 @@
 #import "LSPPublishViewController.h"
 #import "LSPVerticalButton.h"
 #import <POP.h>
+#import "LSPPostWordViewController.h"
+#import "LSPNavigationController.h"
 static CGFloat const animDelay = 0.1;
 static CGFloat const LSPSpringFactor = 10.0;
 @interface LSPPublishViewController ()
@@ -65,6 +67,7 @@ static CGFloat const LSPSpringFactor = 10.0;
         publishBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         [publishBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [publishBtn setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
+        publishBtn.tag = i;
         [publishBtn addTarget:self action:@selector(publishBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:publishBtn];
         
@@ -97,7 +100,14 @@ static CGFloat const LSPSpringFactor = 10.0;
 - (void)publishBtnClick:(UIButton *)button
 {
     [self cancelWithCompletionBlock:^{
-        LSPLog(@"弹出新控制器");
+        if(button.tag == 2){//发段子
+            //弹出发段子的控制器
+            LSPPostWordViewController *postWordVC = [[LSPPostWordViewController alloc] init];
+            LSPNavigationController *nav = [[LSPNavigationController alloc] initWithRootViewController:postWordVC];
+            UIViewController *viewVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+            [viewVC presentViewController:nav animated:YES completion:nil];
+            
+        }
     }];
 }
 /**
