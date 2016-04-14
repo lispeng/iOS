@@ -61,4 +61,8 @@ NSString *const LSPSelectControllerKey = @"LSPSelectControllerKey";
  *  标签的间距
  */
  CGFloat const LSPTagMargin = 5;
+/**
+ *  标签的高度
+ */
+CGFloat const LSPTagHeight = 25;
 

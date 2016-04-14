@@ -25,6 +25,7 @@
     
     [self sizeToFit];
     self.width += 3 * LSPTagMargin;
+    self.height = LSPTagHeight;
 }
 
 - (void)layoutSubviews

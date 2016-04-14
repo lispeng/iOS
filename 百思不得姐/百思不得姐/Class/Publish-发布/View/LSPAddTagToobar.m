@@ -13,9 +13,24 @@
  *  顶部的控件
  */
 @property (weak, nonatomic) IBOutlet UIView *topView;
+/**
+ *  存放所有标签的label
+ */
+@property (strong,nonatomic) NSMutableArray *tagLabels;
+/**
+ *  添加按钮
+ */
+@property (nonatomic,weak) UIButton *addButton;
 
 @end
 @implementation LSPAddTagToobar
+- (NSMutableArray *)tagLabels
+{
+    if (!_tagLabels) {
+        _tagLabels = [NSMutableArray array];
+    }
+    return _tagLabels;
+}
 + (instancetype)toolbar
 {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
@@ -30,13 +45,77 @@
     addButton.x = LSPTagMargin;
     [addButton addTarget:self action:@selector(addButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.topView addSubview:addButton];
+    self.addButton = addButton;
 }
 - (void)addButtonClick
 {
     LSPAddTagViewController *addTagVC = [[LSPAddTagViewController alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [addTagVC setTagsBlock:^(NSArray *tags) {
+        [weakSelf createTagLabel:tags];
+        NSLog(@"addTagVC.tags = %@",tags);
+    }];
+    addTagVC.tags = [self.tagLabels valueForKeyPath:@"text"];
     UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     UINavigationController *nav = (UINavigationController *)rootVC.presentedViewController;
     [nav pushViewController:addTagVC animated:YES];
+}
+- (void)createTagLabel:(NSArray *)tags
+{
+    [self.tagLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.tagLabels removeAllObjects];
+    
+    for (int i = 0; i < tags.count; i ++) {
+        UILabel *tagLabel = [[UILabel alloc] init];
+        tagLabel.text = tags[i];
+        tagLabel.textAlignment = NSTextAlignmentCenter;
+        tagLabel.font = LSPTagFont;
+        [tagLabel sizeToFit];
+        tagLabel.width += 2 * LSPTagMargin;
+        tagLabel.height = LSPTagHeight;        
+        tagLabel.backgroundColor = LSPTagBg;
+        tagLabel.textColor = [UIColor whiteColor];
+        [self.topView addSubview:tagLabel];
+        [self.tagLabels addObject:tagLabel];
+        //位置设置
+        //UILabel *tagLabel = self.tagLabels[i];
+        if (0 == i) {//第一个标签按钮
+            tagLabel.x = 0;
+            tagLabel.y = 0;
+        }else{
+            
+            //获取上一个按钮
+            UILabel *lastTagLabel = self.tagLabels[i - 1];
+            //计算左边的宽度
+            CGFloat leftWidth = CGRectGetMaxX(lastTagLabel.frame) + LSPTagMargin;
+            //计算右边的宽度
+            CGFloat rightWidth = self.topView.width - leftWidth;
+            if (rightWidth >= tagLabel.width) {//显示在当前行
+                tagLabel.y = lastTagLabel.y;
+                tagLabel.x = leftWidth;
+            }else{//显示在下一行
+                tagLabel.x = 0;
+                tagLabel.y = CGRectGetMaxY(lastTagLabel.frame) + LSPTagMargin;
+                
+            }
+            
+        }
+
+        
+    }
+    //取出最后一个按钮
+    UILabel *lastTagLabel = [self.tagLabels lastObject];
+    CGFloat leftWidth = CGRectGetMaxX(lastTagLabel.frame) + LSPTagMargin;
+    if (self.topView.width - leftWidth  >= self.addButton.width) {
+        
+        self.addButton.x = leftWidth;
+        self.addButton.y = lastTagLabel.y;
+        
+    }else{
+        self.addButton.x = 0;
+        self.addButton.y = CGRectGetMaxY(lastTagLabel.frame) + LSPTagMargin;
+    }
+
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -11,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xlb-YM-p3f" userLabel="顶部工具条">
-                    <rect key="frame" x="0.0" y="0.0" width="324" height="88"/>
+                    <rect key="frame" x="5" y="0.0" width="314" height="88"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhL-15-c5U" userLabel="底部的工具条">
@@ -59,10 +59,10 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="BhL-15-c5U" secondAttribute="trailing" id="2TR-49-jdY"/>
                 <constraint firstItem="BhL-15-c5U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5I4-Bz-1H2"/>
-                <constraint firstAttribute="trailing" secondItem="Xlb-YM-p3f" secondAttribute="trailing" id="8KD-pc-gIF"/>
+                <constraint firstAttribute="trailing" secondItem="Xlb-YM-p3f" secondAttribute="trailing" constant="5" id="8KD-pc-gIF"/>
                 <constraint firstItem="BhL-15-c5U" firstAttribute="top" secondItem="Xlb-YM-p3f" secondAttribute="bottom" id="OSz-1C-mBk"/>
                 <constraint firstItem="Xlb-YM-p3f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RzY-v3-v2a"/>
-                <constraint firstItem="Xlb-YM-p3f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mW0-p9-s8o"/>
+                <constraint firstItem="Xlb-YM-p3f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="mW0-p9-s8o"/>
                 <constraint firstAttribute="bottom" secondItem="BhL-15-c5U" secondAttribute="bottom" id="ttp-Eg-gXe"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

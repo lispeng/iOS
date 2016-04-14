@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface LSPAddTagViewController : UIViewController
-
+/**
+ *  获取tags的block
+ */
+@property (copy,nonatomic) void (^tagsBlock)(NSArray *tags);
+/**
+ *  所有的标签
+ */
+@property (strong,nonatomic) NSArray *tags;
 @end

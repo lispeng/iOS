@@ -16,6 +16,8 @@
         self.placeholder = @"多个标签用逗号或换行隔开";
         //设置占位文字的颜色
         [self setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
+        self.height = LSPTagHeight;
+
     }
     return self;
 }

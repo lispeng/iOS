@@ -70,3 +70,8 @@ UIKIT_EXTERN NSString *const LSPSelectControllerKey;
  *  标签的间距
  */
 UIKIT_EXTERN CGFloat const LSPTagMargin;
+/**
+ *  标签的高度
+ */
+UIKIT_EXTERN CGFloat const LSPTagHeight;
+

@@ -34,6 +34,6 @@
 #define LSPTagBg LSPColor(74, 139, 209)
 #define LSPScreenW [UIScreen mainScreen].bounds.size.width
 #define LSPScreenH [UIScreen mainScreen].bounds.size.height
-
+#define LSPTagFont [UIFont systemFontOfSize:14]
 
 #endif

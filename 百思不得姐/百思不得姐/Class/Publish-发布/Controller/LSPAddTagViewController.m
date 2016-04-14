@@ -9,6 +9,7 @@
 #import "LSPAddTagViewController.h"
 #import "LSPTagButton.h"
 #import "LSPTagTextField.h"
+#import "SVProgressHUD.h"
 @interface LSPAddTagViewController ()<UITextFieldDelegate>
 /**
  *  背景View
@@ -61,6 +62,8 @@
     [self setupContentView];
     //输入框控件
     [self setupTextField];
+    //初始化tag标签
+    [self setupTags];
     // Do any additional setup after loading the view.
 }
 - (void)setupAddTagNavigationBar
@@ -81,14 +84,19 @@
 }
 - (void)completion
 {
+    //取出所有按钮的标题文字存入数组
+    NSArray *tags = [self.tagButtons valueForKeyPath:@"currentTitle"];
+   // LSPLog(@"tags = %@",tags);
+    //传递tags给block
+    !self.tagsBlock ? : self.tagsBlock(tags);
     
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)setupTextField
 {
     __weak typeof(self) weakSelf = self;
     LSPTagTextField *textField = [[LSPTagTextField alloc] init];
     textField.width = self.contentView.width;
-    textField.height = 25;
     textField.deleteBlock = ^{
         if(weakSelf.textField.hasText) return;
         [weakSelf tagButtonClick:[weakSelf.tagButtons lastObject]];
@@ -99,6 +107,16 @@
     [textField addTarget:self action:@selector(textDidChanged) forControlEvents:UIControlEventEditingChanged];
     [self.contentView addSubview:textField];
     self.textField = textField;
+}
+/**
+ *  初始化tag的标签
+ */
+- (void)setupTags
+{
+    for (NSString *tagTitle in self.tags) {
+        self.textField.text = tagTitle;
+        [self addButtonClick];
+    }
 }
 /**
  *  监听textfield内部文字的改变
@@ -134,6 +152,11 @@
  */
 - (void)addButtonClick
 {
+    if (self.tagButtons.count == 5) {
+        
+        [SVProgressHUD showErrorWithStatus:@"最多添加5个标签"];
+        return;
+    }
     //添加一个“标签按钮”
     LSPTagButton *tagButton = [LSPTagButton buttonWithType:UIButtonTypeCustom];
    
