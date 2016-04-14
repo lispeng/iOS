@@ -66,4 +66,7 @@ UIKIT_EXTERN NSString *const LSPSelectControllerIndexKey;
  *  tabBar被选中的控制器的key
  */
 UIKIT_EXTERN NSString *const LSPSelectControllerKey;
-
+/**
+ *  标签的间距
+ */
+UIKIT_EXTERN CGFloat const LSPTagMargin;

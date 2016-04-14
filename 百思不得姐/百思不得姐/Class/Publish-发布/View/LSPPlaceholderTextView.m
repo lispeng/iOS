@@ -47,7 +47,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.placeholderLabel.width = self.width - 2 * self.placeholderLabel.x;
+    self.placeholderLabel.width = self.frame.size.width - 2 * self.placeholderLabel.x;
     [self.placeholderLabel sizeToFit];
 }
 
@@ -64,12 +64,13 @@
     _placeholder = [placeholder copy];
     self.placeholderLabel.text = placeholder;
     
-    [self updatePlaceholderLabelSize];
-    //[self setNeedsDisplay];
+  //  [self updatePlaceholderLabelSize];
+    [self setNeedsLayout];
 }
 /**
  *  更新占位文字控件的尺寸
  */
+/*
 - (void)updatePlaceholderLabelSize
 {
     CGSize maxSize = CGSizeMake(LSPScreenW - 2 * self.placeholderLabel.x, MAXFLOAT);
@@ -77,13 +78,15 @@
     self.placeholderLabel.size = [self.placeholder boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : self.font} context:nil].size;
 
 }
+ */
 - (void)setFont:(UIFont *)font
 {
     [super setFont:font];
     self.placeholderLabel.font = font;
     
-     [self updatePlaceholderLabelSize];
-    //[self setNeedsDisplay];
+    // [self updatePlaceholderLabelSize];
+     [self setNeedsLayout];
+ 
 }
 
 - (void)setText:(NSString *)text

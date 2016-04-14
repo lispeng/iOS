@@ -22,6 +22,8 @@
 		040DABC21CB3B71B00C3EABD /* LSPTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040DABC11CB3B71B00C3EABD /* LSPTopicVoiceView.xib */; };
 		040DABC51CB407FF00C3EABD /* LSPTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DABC41CB407FF00C3EABD /* LSPTopicVideoView.m */; };
 		040DABC71CB4082600C3EABD /* LSPTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040DABC61CB4082600C3EABD /* LSPTopicVideoView.xib */; };
+		040EF0DB1CBF290F000AE80B /* LSPTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EF0DA1CBF290F000AE80B /* LSPTagButton.m */; };
+		040EF0DE1CBF4256000AE80B /* LSPTagTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EF0DD1CBF4256000AE80B /* LSPTagTextField.m */; };
 		0412DEA91CB48B6F00B392DA /* LSPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412DEA81CB48B6F00B392DA /* LSPUser.m */; };
 		0412DEAC1CB48E3600B392DA /* LSPComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412DEAB1CB48E3600B392DA /* LSPComment.m */; };
 		0412DEB01CB4D8D200B392DA /* LSPCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412DEAE1CB4D8D200B392DA /* LSPCommentViewController.m */; };
@@ -31,6 +33,9 @@
 		0416F8B21CA4AFD100168977 /* LSPTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0416F8B11CA4AFD100168977 /* LSPTopicPictureView.xib */; };
 		0416F8BC1CA5122200168977 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0416F8B91CA5122200168977 /* DACircularProgressView.m */; };
 		0416F8BD1CA5122200168977 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0416F8BB1CA5122200168977 /* DALabeledCircularProgressView.m */; };
+		041CDF441CBDBFD50083E8BE /* LSPAddTagToobar.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CDF431CBDBFD50083E8BE /* LSPAddTagToobar.m */; };
+		041CDF461CBDC01E0083E8BE /* LSPAddTagToobar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041CDF451CBDC01E0083E8BE /* LSPAddTagToobar.xib */; };
+		041CDF491CBDE3AA0083E8BE /* LSPAddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CDF481CBDE3AA0083E8BE /* LSPAddTagViewController.m */; };
 		0434CCD21C66F8500032D997 /* LSPEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CCA81C66F8500032D997 /* LSPEssenceViewController.m */; };
 		0434CCD31C66F8500032D997 /* LSPFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CCAE1C66F8500032D997 /* LSPFriendTrendsViewController.m */; };
 		0434CCD41C66F8500032D997 /* LSPTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CCB41C66F8500032D997 /* LSPTabBarViewController.m */; };
@@ -176,6 +181,10 @@
 		040DABC31CB407FF00C3EABD /* LSPTopicVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPTopicVideoView.h; sourceTree = "<group>"; };
 		040DABC41CB407FF00C3EABD /* LSPTopicVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPTopicVideoView.m; sourceTree = "<group>"; };
 		040DABC61CB4082600C3EABD /* LSPTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSPTopicVideoView.xib; sourceTree = "<group>"; };
+		040EF0D91CBF290F000AE80B /* LSPTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPTagButton.h; sourceTree = "<group>"; };
+		040EF0DA1CBF290F000AE80B /* LSPTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPTagButton.m; sourceTree = "<group>"; };
+		040EF0DC1CBF4256000AE80B /* LSPTagTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPTagTextField.h; sourceTree = "<group>"; };
+		040EF0DD1CBF4256000AE80B /* LSPTagTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPTagTextField.m; sourceTree = "<group>"; };
 		0412DEA71CB48B6F00B392DA /* LSPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPUser.h; sourceTree = "<group>"; };
 		0412DEA81CB48B6F00B392DA /* LSPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPUser.m; sourceTree = "<group>"; };
 		0412DEAA1CB48E3600B392DA /* LSPComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPComment.h; sourceTree = "<group>"; };
@@ -192,6 +201,11 @@
 		0416F8B91CA5122200168977 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 		0416F8BA1CA5122200168977 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
 		0416F8BB1CA5122200168977 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
+		041CDF421CBDBFD50083E8BE /* LSPAddTagToobar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPAddTagToobar.h; sourceTree = "<group>"; };
+		041CDF431CBDBFD50083E8BE /* LSPAddTagToobar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPAddTagToobar.m; sourceTree = "<group>"; };
+		041CDF451CBDC01E0083E8BE /* LSPAddTagToobar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSPAddTagToobar.xib; sourceTree = "<group>"; };
+		041CDF471CBDE3AA0083E8BE /* LSPAddTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPAddTagViewController.h; sourceTree = "<group>"; };
+		041CDF481CBDE3AA0083E8BE /* LSPAddTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPAddTagViewController.m; sourceTree = "<group>"; };
 		0434CCA71C66F8500032D997 /* LSPEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPEssenceViewController.h; sourceTree = "<group>"; };
 		0434CCA81C66F8500032D997 /* LSPEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPEssenceViewController.m; sourceTree = "<group>"; };
 		0434CCAD1C66F8500032D997 /* LSPFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPFriendTrendsViewController.h; sourceTree = "<group>"; };
@@ -440,6 +454,8 @@
 				0407108E1CBC7EAB00267B29 /* LSPPublishViewController.xib */,
 				040710931CBC802300267B29 /* LSPPostWordViewController.h */,
 				040710941CBC802300267B29 /* LSPPostWordViewController.m */,
+				041CDF471CBDE3AA0083E8BE /* LSPAddTagViewController.h */,
+				041CDF481CBDE3AA0083E8BE /* LSPAddTagViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -456,6 +472,13 @@
 			children = (
 				040710961CBCCA0B00267B29 /* LSPPlaceholderTextView.h */,
 				040710971CBCCA0B00267B29 /* LSPPlaceholderTextView.m */,
+				041CDF421CBDBFD50083E8BE /* LSPAddTagToobar.h */,
+				041CDF431CBDBFD50083E8BE /* LSPAddTagToobar.m */,
+				041CDF451CBDC01E0083E8BE /* LSPAddTagToobar.xib */,
+				040EF0D91CBF290F000AE80B /* LSPTagButton.h */,
+				040EF0DA1CBF290F000AE80B /* LSPTagButton.m */,
+				040EF0DC1CBF4256000AE80B /* LSPTagTextField.h */,
+				040EF0DD1CBF4256000AE80B /* LSPTagTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1169,6 +1192,7 @@
 				04835B7E1CA5B208000D1CD1 /* LSPPushGuideView.xib in Resources */,
 				04F1E55B1C74FB0600992F1E /* LSPFriendTrendsViewController.xib in Resources */,
 				04F163011C77AF3E002F72BC /* LSPLoginRegisterViewController.xib in Resources */,
+				041CDF461CBDC01E0083E8BE /* LSPAddTagToobar.xib in Resources */,
 				040DABC21CB3B71B00C3EABD /* LSPTopicVoiceView.xib in Resources */,
 				045F61F81C64433200D71691 /* LaunchScreen.xib in Resources */,
 				044C7DC51CA7BC370055CFEC /* LSPShowPictureViewController.xib in Resources */,
@@ -1285,6 +1309,7 @@
 				04F1E5A01C75047200992F1E /* SDWebImageDecoder.m in Sources */,
 				04F1E5FE1C7552CD00992F1E /* NSObject+MJClass.m in Sources */,
 				04F1E5DF1C754E7900992F1E /* LSPRecommendCategory.m in Sources */,
+				041CDF491CBDE3AA0083E8BE /* LSPAddTagViewController.m in Sources */,
 				04F1E5FF1C7552CD00992F1E /* NSObject+MJCoding.m in Sources */,
 				04F1E59D1C75047200992F1E /* NSData+ImageContentType.m in Sources */,
 				0434CCD71C66F8500032D997 /* LSPMeViewController.m in Sources */,
@@ -1306,6 +1331,7 @@
 				0416F8BD1CA5122200168977 /* DALabeledCircularProgressView.m in Sources */,
 				045046781C7666D2008AA806 /* MJRefreshAutoGifFooter.m in Sources */,
 				0485F5271CA7058600228325 /* LSPConst.m in Sources */,
+				040EF0DE1CBF4256000AE80B /* LSPTagTextField.m in Sources */,
 				04A9609C1CBBD5CA00DBC811 /* LSPWebViewController.m in Sources */,
 				045046741C7666D2008AA806 /* MJRefreshBackFooter.m in Sources */,
 				045046831C7666D2008AA806 /* UIScrollView+MJExtension.m in Sources */,
@@ -1342,6 +1368,8 @@
 				04F1E5CF1C7509E300992F1E /* Foundation+Log.m in Sources */,
 				045046731C7666D2008AA806 /* MJRefreshAutoFooter.m in Sources */,
 				04F1E5A71C75047200992F1E /* UIImage+MultiFormat.m in Sources */,
+				040EF0DB1CBF290F000AE80B /* LSPTagButton.m in Sources */,
+				041CDF441CBDBFD50083E8BE /* LSPAddTagToobar.m in Sources */,
 				04F1E6011C7552CD00992F1E /* NSObject+MJProperty.m in Sources */,
 				04F1E5C71C75072900992F1E /* AFHTTPSessionManager.m in Sources */,
 				04F1E5C81C75072900992F1E /* AFNetworkReachabilityManager.m in Sources */,

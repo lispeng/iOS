@@ -57,3 +57,8 @@ NSString *const LSPSelectControllerIndexKey = @"LSPSelectControllerIndexKey";
  *  tabBar被选中的控制器的key
  */
 NSString *const LSPSelectControllerKey = @"LSPSelectControllerKey";
+/**
+ *  标签的间距
+ */
+ CGFloat const LSPTagMargin = 5;
+
