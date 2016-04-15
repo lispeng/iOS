@@ -25,6 +25,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    //[self.textView resignFirstResponder];
+    //先退出之前的键盘，再弹出现在的键盘
+    [self.view endEditing:YES];
     [self.textView becomeFirstResponder];
 }
 - (void)viewDidLoad {

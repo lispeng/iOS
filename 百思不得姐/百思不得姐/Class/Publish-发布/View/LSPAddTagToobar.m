@@ -46,6 +46,8 @@
     [addButton addTarget:self action:@selector(addButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.topView addSubview:addButton];
     self.addButton = addButton;
+    //开始的两个标签
+    [self createTagLabel:@[@"吐槽",@"糗事"]];
 }
 - (void)addButtonClick
 {
@@ -77,6 +79,21 @@
         tagLabel.textColor = [UIColor whiteColor];
         [self.topView addSubview:tagLabel];
         [self.tagLabels addObject:tagLabel];
+        }
+    //重新布局子控件
+    [self setNeedsLayout];
+    
+            
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    for (int i = 0; i < self.tagLabels.count; i ++) {
+        
+        UILabel *tagLabel = self.tagLabels[i];
+       
         //位置设置
         //UILabel *tagLabel = self.tagLabels[i];
         if (0 == i) {//第一个标签按钮
@@ -100,7 +117,7 @@
             }
             
         }
-
+        
         
     }
     //取出最后一个按钮
@@ -115,8 +132,15 @@
         self.addButton.x = 0;
         self.addButton.y = CGRectGetMaxY(lastTagLabel.frame) + LSPTagMargin;
     }
+    
+    
+    //toolbar自身的整体高度
+    CGFloat oldH = self.height;
+    self.height = CGRectGetMaxY(self.addButton.frame) + 40;
+    self.y -= self.height - oldH;
 
 }
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

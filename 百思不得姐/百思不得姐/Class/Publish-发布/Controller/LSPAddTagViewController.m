@@ -30,6 +30,39 @@
 @end
 
 @implementation LSPAddTagViewController
+
+- (UIView *)contentView
+{
+    if (!_contentView) {
+        
+        UIView *contentView = [[UIView alloc] init];
+        [self.view addSubview:contentView];
+        self.contentView = contentView;
+
+    }
+    return _contentView;
+}
+
+- (LSPTagTextField *)textField
+{
+    if (!_textField) {
+        
+        __weak typeof(self) weakSelf = self;
+        LSPTagTextField *textField = [[LSPTagTextField alloc] init];
+        textField.deleteBlock = ^{
+            if(weakSelf.textField.hasText) return;
+            [weakSelf tagButtonClick:[weakSelf.tagButtons lastObject]];
+        };
+        
+        textField.delegate = self;
+        [textField becomeFirstResponder];
+        [textField addTarget:self action:@selector(textDidChanged) forControlEvents:UIControlEventEditingChanged];
+        [self.contentView addSubview:textField];
+        self.textField = textField;
+
+    }
+    return _textField;
+}
 - (NSMutableArray *)tagButtons
 {
     if (!_tagButtons) {
@@ -41,7 +74,6 @@
 {
     if (!_addButton) {
         UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        addButton.width = self.contentView.width;
         addButton.height = 35;
         [addButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [addButton addTarget:self action:@selector(addButtonClick) forControlEvents:UIControlEventTouchUpInside];
@@ -58,12 +90,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupAddTagNavigationBar];
-    //背景控件
-    [self setupContentView];
+    
     //输入框控件
-    [self setupTextField];
-    //初始化tag标签
-    [self setupTags];
+    //[self setupTextField];
+   
     // Do any additional setup after loading the view.
 }
 - (void)setupAddTagNavigationBar
@@ -72,16 +102,7 @@
     self.title = @"添加标签";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(completion)];
 }
-- (void)setupContentView
-{
-    UIView *contentView = [[UIView alloc] init];
-    contentView.x = LSPTagMargin;
-    contentView.y = 64 + LSPTagMargin;
-    contentView.width = self.view.width - 2 * LSPTagMargin;
-    contentView.height = LSPScreenH;
-    [self.view addSubview:contentView];
-    self.contentView = contentView;
-}
+
 - (void)completion
 {
     //取出所有按钮的标题文字存入数组
@@ -92,31 +113,20 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)setupTextField
-{
-    __weak typeof(self) weakSelf = self;
-    LSPTagTextField *textField = [[LSPTagTextField alloc] init];
-    textField.width = self.contentView.width;
-    textField.deleteBlock = ^{
-        if(weakSelf.textField.hasText) return;
-        [weakSelf tagButtonClick:[weakSelf.tagButtons lastObject]];
-    };
 
-    textField.delegate = self;
-    [textField becomeFirstResponder];
-    [textField addTarget:self action:@selector(textDidChanged) forControlEvents:UIControlEventEditingChanged];
-    [self.contentView addSubview:textField];
-    self.textField = textField;
-}
 /**
  *  初始化tag的标签
  */
 - (void)setupTags
 {
-    for (NSString *tagTitle in self.tags) {
-        self.textField.text = tagTitle;
-        [self addButtonClick];
+    if (self.tags.count) {
+        for (NSString *tagTitle in self.tags) {
+            self.textField.text = tagTitle;
+            [self addButtonClick];
+        }
+      self.tags = nil;
     }
+    
 }
 /**
  *  监听textfield内部文字的改变
@@ -244,6 +254,9 @@
         self.textField.x = 0;
         self.textField.y = CGRectGetMaxY(lastButton.frame) + LSPTagMargin;
     }
+    //更新“添加标签”frame
+    self.addButton.y = CGRectGetMaxY(self.textField.frame) + LSPTagMargin;
+    
 
 }
 /**
@@ -254,6 +267,24 @@
 {
     CGFloat textWidth = [self.textField.text sizeWithAttributes:@{NSFontAttributeName : self.textField.font}].width;
     return MAX(100, textWidth);
+}
+/**
+ *  控制器view内部的子控件布局完成后会调用这个方法来
+ */
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    //contentView
+    self.contentView.x = LSPTagMargin;
+    self.contentView.y = 64 + LSPTagMargin;
+    self.contentView.width = self.view.width - 2 * self.contentView.x;
+    self.contentView.height = LSPScreenH;
+    
+    self.textField.width = self.contentView.width;
+    self.addButton.width = self.contentView.width;
+    
+    //初始化tag标签
+    [self setupTags];
 }
 
 #pragma mark--<UITextFieldDelegate>
