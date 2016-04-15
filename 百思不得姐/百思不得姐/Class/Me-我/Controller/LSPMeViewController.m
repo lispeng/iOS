@@ -10,6 +10,7 @@
 #import "LSPMeCell.h"
 #import "LSPMeFooterView.h"
 #import "AFNetworking.h"
+#import "LSPSettingViewController.h"
 @interface LSPMeViewController ()
 
 @end
@@ -59,7 +60,8 @@ static NSString *LSPMeId = @"me";
  */
 - (void)mineSettingButtonClick
 {
-    LSPLog(@"%s",__func__);
+    LSPSettingViewController *settingVC = [[LSPSettingViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 /**
  *  点击导航栏夜间模式的按钮所触发的方法

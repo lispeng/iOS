@@ -36,6 +36,7 @@
 		041CDF441CBDBFD50083E8BE /* LSPAddTagToobar.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CDF431CBDBFD50083E8BE /* LSPAddTagToobar.m */; };
 		041CDF461CBDC01E0083E8BE /* LSPAddTagToobar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041CDF451CBDC01E0083E8BE /* LSPAddTagToobar.xib */; };
 		041CDF491CBDE3AA0083E8BE /* LSPAddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CDF481CBDE3AA0083E8BE /* LSPAddTagViewController.m */; };
+		042509EB1CC09404001A1D88 /* LSPSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042509EA1CC09404001A1D88 /* LSPSettingViewController.m */; };
 		0434CCD21C66F8500032D997 /* LSPEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CCA81C66F8500032D997 /* LSPEssenceViewController.m */; };
 		0434CCD31C66F8500032D997 /* LSPFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CCAE1C66F8500032D997 /* LSPFriendTrendsViewController.m */; };
 		0434CCD41C66F8500032D997 /* LSPTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CCB41C66F8500032D997 /* LSPTabBarViewController.m */; };
@@ -206,6 +207,8 @@
 		041CDF451CBDC01E0083E8BE /* LSPAddTagToobar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSPAddTagToobar.xib; sourceTree = "<group>"; };
 		041CDF471CBDE3AA0083E8BE /* LSPAddTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPAddTagViewController.h; sourceTree = "<group>"; };
 		041CDF481CBDE3AA0083E8BE /* LSPAddTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPAddTagViewController.m; sourceTree = "<group>"; };
+		042509E91CC09404001A1D88 /* LSPSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPSettingViewController.h; sourceTree = "<group>"; };
+		042509EA1CC09404001A1D88 /* LSPSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPSettingViewController.m; sourceTree = "<group>"; };
 		0434CCA71C66F8500032D997 /* LSPEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPEssenceViewController.h; sourceTree = "<group>"; };
 		0434CCA81C66F8500032D997 /* LSPEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPEssenceViewController.m; sourceTree = "<group>"; };
 		0434CCAD1C66F8500032D997 /* LSPFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPFriendTrendsViewController.h; sourceTree = "<group>"; };
@@ -526,10 +529,10 @@
 		0434CCA41C66F8500032D997 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				0407108A1CBC7EAB00267B29 /* Publish-发布 */,
 				0434CCB11C66F8500032D997 /* Main */,
 				0434CCA51C66F8500032D997 /* Essence-精华 */,
 				0434CCC31C66F8500032D997 /* New-新帖 */,
+				0407108A1CBC7EAB00267B29 /* Publish-发布 */,
 				0434CCAB1C66F8500032D997 /* FriendTrends-关注 */,
 				0434CCBB1C66F8500032D997 /* Me-我 */,
 				0434CCC71C66F8500032D997 /* Other */,
@@ -694,6 +697,8 @@
 				04A960991CBBD5CA00DBC811 /* LSPWebViewController.h */,
 				04A9609A1CBBD5CA00DBC811 /* LSPWebViewController.m */,
 				04A9609B1CBBD5CA00DBC811 /* LSPWebViewController.xib */,
+				042509E91CC09404001A1D88 /* LSPSettingViewController.h */,
+				042509EA1CC09404001A1D88 /* LSPSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1380,6 +1385,7 @@
 				045046801C7666D2008AA806 /* MJRefreshStateHeader.m in Sources */,
 				0434CCD41C66F8500032D997 /* LSPTabBarViewController.m in Sources */,
 				04F1E5A51C75047200992F1E /* UIButton+WebCache.m in Sources */,
+				042509EB1CC09404001A1D88 /* LSPSettingViewController.m in Sources */,
 				04F1E5DC1C750E5300992F1E /* SVRadialGradientLayer.m in Sources */,
 				04F163001C77AF3E002F72BC /* LSPLoginRegisterViewController.m in Sources */,
 				04F1E5561C74D41E00992F1E /* LSPNavigationController.m in Sources */,

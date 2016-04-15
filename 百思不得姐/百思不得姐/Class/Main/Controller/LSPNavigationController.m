@@ -38,6 +38,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //如果滑动移除控制器功能消失，清除代理，导航控制器会重新设置代理
+    self.interactivePopGestureRecognizer.delegate = nil;
     // Do any additional setup after loading the view.
 }
 /**
